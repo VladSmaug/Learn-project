@@ -1,0 +1,26 @@
+.content {
+  grid-area: content;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  background-color: coral;
+}
+.content img {
+  width: 15rem;
+  height: 100%;
+}
+.avatar {
+  padding: 10px;
+  width: 50px;
+  height: 50px;
+}
+.item {
+  color: green;
+}
+.name {
+  color: gold;
+}
+.name:hover {
+  color: red;
+}
