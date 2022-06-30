@@ -9,6 +9,7 @@ function App() {
       <Header />
       <Nav />
       <Profile />
+      <div>Test code</div>
     </div>
   );
 }
