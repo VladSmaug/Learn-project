@@ -1,7 +1,7 @@
 import React from "react";
 import s from "./Nav.module.css";
 
-const Nav = () => {
+const Nav = (objectProps) => {
   return (
     <nav className={s.nav}>
       <ul>
@@ -21,6 +21,7 @@ const Nav = () => {
           <a href="#">Home</a>
         </li>
       </ul>
+      {objectProps.guide}
     </nav>
   );
 };

@@ -1,15 +1,15 @@
 import "./App.css";
-import Header from "./components/Header/Header";
+import Header from "./components/Header/index";
 import Nav from "./components/Nav";
-import Profile from "./components/Profile/Profile";
+import Profile from "./components/Profile/index";
 
 function App() {
   return (
     <div className="app-wrapper">
-      <Header />
-      <Nav />
+      <Header nameLogoDefault="Logo1" nameLogoSample="Logo2" />
+      <Nav guide="This is nav" />
       <Profile />
-      <div>Test code</div>
+      <div></div>
     </div>
   );
 }
