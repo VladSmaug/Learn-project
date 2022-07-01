@@ -13,7 +13,7 @@ const Post = (props) => {
       {props.likes}
       <div>Users info</div>
       <div>Description</div>
-      <div>Commiting practice</div>
+      <div>Testing git</div>
     </div>
   );
 };
