@@ -7,13 +7,13 @@ const Nav = (props) => {
     <nav className={s.nav}>
       <ul>
         <li>
-          <a href="#">Author</a>
+          <a href="/profile">Profile</a>
+        </li>
+        <li>
+          <a href="/dialogs">Messages</a>
         </li>
         <li>
           <a href="#">About</a>
-        </li>
-        <li>
-          <a href="#">Massages</a>
         </li>
         <li>
           <a href="#">Contacts</a>
