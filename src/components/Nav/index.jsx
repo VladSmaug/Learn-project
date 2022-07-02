@@ -2,6 +2,7 @@ import React from "react";
 import s from "./Nav.module.css";
 
 const Nav = (props) => {
+  const { guide } = props;
   return (
     <nav className={s.nav}>
       <ul>
@@ -21,7 +22,7 @@ const Nav = (props) => {
           <a href="#">Home</a>
         </li>
       </ul>
-      {props.guide}
+      {guide}
     </nav>
   );
 };
