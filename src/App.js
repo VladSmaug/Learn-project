@@ -10,7 +10,7 @@ function App() {
       <Header nameLogoDefault="Logo1" nameLogoSample="Logo2" />
       <Nav guide="This is nav" />
       <div className="app-wrapper-content">
-        {/* <Profile /> */}
+        <Profile />
         <Dialogs />
       </div>
     </div>

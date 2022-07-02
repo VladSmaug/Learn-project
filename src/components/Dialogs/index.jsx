@@ -1,6 +1,6 @@
 import React from "react";
-import s from "./index.module.css";
-const Dialogs = (props) => {
-  return <div className={s.item}>Dialogs</div>;
+import styles from "./index.module.css";
+const Dialogs = () => {
+  return <div className={styles.item}>Dialogs</div>;
 };
 export default Dialogs;
