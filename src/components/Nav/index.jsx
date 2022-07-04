@@ -1,11 +1,11 @@
 import React from "react";
 
-import s from "./Nav.module.css";
+import styles from "./Nav.module.css";
 
 const Nav = (props) => {
   const { guide } = props;
   return (
-    <nav className={s.nav}>
+    <nav className={styles.nav}>
       <ul>
         <li>
           <a href="/profile">Profile</a>
