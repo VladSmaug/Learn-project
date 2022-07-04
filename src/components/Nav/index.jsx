@@ -1,19 +1,18 @@
 import React from "react";
-import s from "./Nav.module.css";
+
+import { Link } from "react-router-dom";
+
+import styles from "./Nav.module.css";
 
 const Nav = (props) => {
   const { guide } = props;
   return (
-    <nav className={s.nav}>
+    <nav className={styles.nav}>
       <ul>
-        <li>
-          <a href="#">Author</a>
-        </li>
+        <Link to="/profile">Profile</Link>
+        <Link to="/dialogs">Dialogs</Link>
         <li>
           <a href="#">About</a>
-        </li>
-        <li>
-          <a href="#">Massages</a>
         </li>
         <li>
           <a href="#">Contacts</a>
