@@ -1,5 +1,7 @@
 import React from "react";
 
+import { Link } from "react-router-dom";
+
 import styles from "./Nav.module.css";
 
 const Nav = (props) => {
@@ -7,12 +9,8 @@ const Nav = (props) => {
   return (
     <nav className={styles.nav}>
       <ul>
-        <li>
-          <a href="/profile">Profile</a>
-        </li>
-        <li>
-          <a href="/dialogs">Messages</a>
-        </li>
+        <Link to="/profile">Profile</Link>
+        <Link to="/dialogs">Dialogs</Link>
         <li>
           <a href="#">About</a>
         </li>
