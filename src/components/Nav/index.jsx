@@ -22,7 +22,6 @@ const Nav = (props) => {
         </li>
       </ul>
       {guide}
-      {guide}
     </nav>
   );
 };
