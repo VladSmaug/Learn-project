@@ -11,3 +11,7 @@
   text-decoration: none;
   color: white;
 }
+a.activeLink:active {
+  text-decoration: none;
+  color: gold;
+}

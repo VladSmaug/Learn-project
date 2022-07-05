@@ -10,7 +10,7 @@ import "./App.css";
 function App() {
   return (
     <div className="app-wrapper">
-      <Header />
+      <Header nameLogoDefault="1" nameLogoSample="2" />
       <Nav />
       <div className="app-wrapper-content">
         <Routes>
