@@ -1,4 +1,5 @@
 import React from "react";
+import classNames from "classnames";
 
 import styles from "./index.module.css";
 
@@ -6,7 +7,7 @@ const Dialogs = () => {
   return (
     <div className={styles.dialogs}>
       <div className={styles.dialogsItems}>
-        <div className={styles.dialog + " " + styles.active}>Vlad</div>
+        <div className={classNames(styles.dialog, styles.active)}>Vlad</div>
         <div className={styles.dialog}>FFFF</div>
         <div className={styles.dialog}>Username1</div>
         <div className={styles.dialog}>Username2</div>

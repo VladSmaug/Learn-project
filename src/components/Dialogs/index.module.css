@@ -1,7 +1,6 @@
 .dialogs {
-  display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: 0.2fr 0.8fr;
+  display: flex;
+  justify-content: flex-start;
 }
 .dialogsItems {
   padding: 10px;
