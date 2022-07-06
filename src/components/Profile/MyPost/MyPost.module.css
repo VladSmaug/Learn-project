@@ -1,0 +1,17 @@
+.my_post_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.my_post_wrapper h3 {
+  text-align: center;
+}
+.my_post_wrapper textarea {
+  width: 200px;
+  margin: 20px;
+}
+.my_post_wrapper button {
+  width: 200px;
+  margin: 20px;
+}

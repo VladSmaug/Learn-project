@@ -1,0 +1,9 @@
+.post-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.image {
+  width: 100px;
+  height: 100px;
+  border-radius: 20px;
+}

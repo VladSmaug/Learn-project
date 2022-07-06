@@ -1,27 +1,15 @@
 import React from "react";
+import MyInfo from "./MyInfo";
 
-import MyPost from "./My posts/MyPost";
+import MyPost from "./MyPost";
 
 import styles from "./Profile.module.css";
 
 const Profile = () => {
   return (
     <div>
-      <div>
-        <img
-          src="https://img.freepik.com/free-photo/puppy-labrador-retriever_87557-10551.jpg?w=2000"
-          alt=""
-          className={styles.avatar}
-        />
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum, ad.
-        </p>
-        <ul className={styles.item}>
-          <li className={styles.name}>My posts</li>
-          <li>My description</li>
-          <li>My emotions</li>
-          <li>My</li>
-        </ul>
+      <div className={styles.content}>
+        <MyInfo />
         <MyPost />
       </div>
     </div>

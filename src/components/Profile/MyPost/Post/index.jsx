@@ -1,15 +1,15 @@
 import React from "react";
 
-import p from "./Postnumber.module.css";
+import styles from "./Postnumber.module.css";
 
 const Post = (props) => {
   const { message, likes } = props;
   return (
-    <div>
+    <div className="post-wrapper">
       <img
-        className={p.image}
+        className={styles.image}
         src="https://img1.freepng.ru/20180403/qxw/kisspng-computer-icons-symbol-avatar-logo-clip-art-person-with-helmut-5ac354968f08a9.0046040315227506145859.jpg"
-        alt=""
+        alt="post-icon"
       />
       {message}
       {likes}
