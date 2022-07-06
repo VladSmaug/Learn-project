@@ -15,12 +15,3 @@
   width: 50px;
   height: 50px;
 }
-.item {
-  color: green;
-}
-.name {
-  color: gold;
-}
-.name:hover {
-  color: red;
-}
