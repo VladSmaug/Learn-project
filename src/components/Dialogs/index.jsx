@@ -18,16 +18,16 @@ const Dialogs = () => {
           <NavLink to={"dialogs/3"}>Username1</NavLink>
         </div>
         <div className={styles.dialog}>
-          <NavLink to={"dialogs/3"}>Username2</NavLink>
+          <NavLink to={"dialogs/4"}>Username2</NavLink>
         </div>
         <div className={styles.dialog}>
-          <NavLink to={"dialogs/4"}>Username3</NavLink>
+          <NavLink to={"dialogs/5"}>Username3</NavLink>
         </div>
         <div className={styles.dialog}>
-          <NavLink to={"dialogs/5"}>Username4</NavLink>
+          <NavLink to={"dialogs/6"}>Username4</NavLink>
         </div>
         <div className={styles.dialog}>
-          <NavLink to={"dialogs/6"}>Username5</NavLink>
+          <NavLink to={"dialogs/7"}>Username5</NavLink>
         </div>
       </div>
       <div className={styles.messages}>
