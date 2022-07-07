@@ -4,6 +4,16 @@ import { NavLink } from "react-router-dom";
 
 import styles from "./index.module.css";
 
+const dialogsData = [
+  { id: 1, name: "Vlad" },
+  { id: 2, name: "Vlad" },
+];
+
+const messagesData = [
+  { text: "lorem", id: 1 },
+  { text: "lorem", id: 2 },
+];
+
 const DialogItem = (props) => {
   const { name, id } = props;
   return (
@@ -20,20 +30,12 @@ const Dialogs = () => {
   return (
     <div className={styles.dialogs}>
       <div className={styles.dialogsItems}>
-        <DialogItem name="Vlad" id="1" />
-        <DialogItem name="vvvv" id="2" />
-        <DialogItem name="qqqq" id="3" />
-        <DialogItem name="vvvv" id="4" />
-        <DialogItem name="gggg" id="5" />
-        <DialogItem name="eeee" id="6" />
+        <DialogItem name={dialogsData[0].name} id={dialogsData[0].id} />
+        <DialogItem name={dialogsData[1].name} id={dialogsData[1].id} />
       </div>
       <div className={styles.messages}>
-        <MessageItem text="lorem" />
-        <MessageItem text="lorem" />
-        <MessageItem text="lorem" />
-        <MessageItem text="lorem" />
-        <MessageItem text="lorem" />
-        <MessageItem text="lorem" />
+        <MessageItem text={messagesData[0].text} id={messagesData[0].id} />
+        <MessageItem text={messagesData[1].text} id={messagesData[1].id} />
       </div>
     </div>
   );
