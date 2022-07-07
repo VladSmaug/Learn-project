@@ -32,14 +32,14 @@ const Dialogs = () => {
       <div className={styles.dialogsItems}>
         <DialogItem
           name={dialogsData.map((dia) => {
-            return <li>{dia.name}</li>;
+            <li>{dia.name}</li>;
           })}
         />
       </div>
       <div className={styles.messages}>
         <MessageItem
           text={messagesData.map((message) => {
-            return <li>{message.text}</li>;
+            <li>{message.text}</li>;
           })}
         />
       </div>

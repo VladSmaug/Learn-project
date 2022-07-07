@@ -7,8 +7,8 @@ const postData = [
   { message: "Hello how are you?", likes: 20, id: 2 },
 ];
 
-const PostElements = postData.map((post) => (
-  <Post message={post.message} likes={post.likes} />
+const PostElements = postData.map((post, index) => (
+  <Post key={index} message={post.message} likes={post.likes} />
 ));
 
 const MyPost = () => (
