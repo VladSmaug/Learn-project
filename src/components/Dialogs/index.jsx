@@ -4,12 +4,12 @@ import { NavLink } from "react-router-dom";
 
 import styles from "./index.module.css";
 
-let dialogsData = [
+const dialogsData = [
   { id: 1, name: "Vlad" },
   { id: 2, name: "Vlad" },
 ];
 
-let messagesData = [
+const messagesData = [
   { text: "lorem", id: 1 },
   { text: "lorem", id: 2 },
 ];
