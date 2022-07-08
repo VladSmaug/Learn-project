@@ -3,6 +3,7 @@ import classNames from "classnames";
 import { NavLink } from "react-router-dom";
 
 import styles from "./index.module.css";
+import TABLE_REG from "./MAP";
 
 const dialogsData = [
   { id: 1, name: "Vlad" },
@@ -43,6 +44,7 @@ const Dialogs = () => {
           ))}
         />
       </div>
+      <TABLE_REG />
     </div>
   );
 };
