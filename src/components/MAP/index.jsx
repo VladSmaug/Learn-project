@@ -25,12 +25,13 @@ const usersList = [
   },
 ];
 
-const TableTitle = () => {
+const TableTitle = (props) => {
+  const { username, surname, age } = props;
   return (
     <div className={style.table_title}>
-      <div>Username</div>
-      <div>Surname</div>
-      <div>Age</div>
+      <div>{username}</div>
+      <div>{surname}</div>
+      <div>{age}</div>
     </div>
   );
 };
@@ -38,7 +39,7 @@ const TableTitle = () => {
 const TableReg = () => {
   return (
     <table className={style.table}>
-      <TableTitle />
+      <TableTitle username="Ім'я користувача" surname="Прізвище" age="Вік" />
       <tr className={style.table_rows}>
         {usersList.map((user) => (
           <>
