@@ -55,15 +55,15 @@ const Dialogs = () => {
     <div className={styles.dialogs}>
       <div className={styles.dialogsItems}>
         <DialogItem
-          name={dialogsData.map((dia) => (
-            <li>{dia.name}</li>
+          name={dialogsData.map((dia, index) => (
+            <li key={index}>{dia.name}</li>
           ))}
         />
       </div>
       <div className={styles.messages}>
         <MessageItem
-          text={messagesData.map((message) => (
-            <li>{message.text}</li>
+          text={messagesData.map((message, index) => (
+            <li key={index}>{message.text}</li>
           ))}
         />
       </div>
