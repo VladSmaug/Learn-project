@@ -2,29 +2,6 @@ import React from "react";
 
 import style from "./MAP.module.css";
 
-const usersList = [
-  {
-    username: "Vlad",
-    surname: "H",
-    age: "25",
-  },
-  {
-    username: "Vlad",
-    surname: "H",
-    age: "25",
-  },
-  {
-    username: "Vlad",
-    surname: "H",
-    age: "25",
-  },
-  {
-    username: "Vlad",
-    surname: "H",
-    age: "25",
-  },
-];
-
 const TableTitle = (props) => {
   const { username, surname, age } = props;
   return (

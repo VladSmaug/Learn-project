@@ -2,8 +2,9 @@ import React from "react";
 import classNames from "classnames";
 import { NavLink } from "react-router-dom";
 
-import styles from "./index.module.css";
 import TableReg from "../MAP";
+
+import styles from "./index.module.css";
 
 const USERS_LIST = [
   {
