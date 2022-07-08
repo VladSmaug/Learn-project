@@ -5,6 +5,29 @@ import { NavLink } from "react-router-dom";
 import styles from "./index.module.css";
 import TableReg from "../MAP";
 
+const USERS_LIST = [
+  {
+    username: "Vlad",
+    surname: "H",
+    age: "25",
+  },
+  {
+    username: "Vlad",
+    surname: "H",
+    age: "25",
+  },
+  {
+    username: "Vlad",
+    surname: "H",
+    age: "25",
+  },
+  {
+    username: "Vlad",
+    surname: "H",
+    age: "25",
+  },
+];
+
 const dialogsData = [
   { id: 1, name: "Vlad" },
   { id: 2, name: "Vlad" },
@@ -44,7 +67,7 @@ const Dialogs = () => {
           ))}
         />
       </div>
-      <TableReg />
+      <TableReg usersList={USERS_LIST} />
     </div>
   );
 };

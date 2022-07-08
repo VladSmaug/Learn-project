@@ -36,7 +36,7 @@ const TableTitle = (props) => {
   );
 };
 
-const TableReg = () => {
+const TableReg = ({ usersList }) => {
   return (
     <table className={style.table}>
       <TableTitle username="Ім'я користувача" surname="Прізвище" age="Вік" />
