@@ -1,0 +1,32 @@
+.table_title {
+  display: flex;
+  justify-content: space-between;
+}
+.table_title td {
+  border: 1px solid #000;
+  text-align: center;
+  width: 33.3%;
+}
+.table {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 300px;
+}
+.table_rows {
+  width: 300px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding-bottom: 20px;
+}
+.name_of_user {
+  border: 1px solid #000;
+  text-align: center;
+}
+.surname_of_user {
+  border: 1px solid #000;
+  text-align: center;
+}
+.age_of_user {
+  border: 1px solid #000;
+  text-align: center;
+}
