@@ -28,25 +28,25 @@ const usersList = [
 const TableTitle = (props) => {
   const { username, surname, age } = props;
   return (
-    <div className={style.table_title}>
-      <div>{username}</div>
-      <div>{surname}</div>
-      <div>{age}</div>
-    </div>
+    <th className={style.table_title}>
+      <td>{username}</td>
+      <td>{surname}</td>
+      <td>{age}</td>
+    </th>
   );
 };
 
 const TableReg = ({ usersList }) => {
   return (
     <table className={style.table}>
-      <TableTitle username="Ім'я користувача" surname="Прізвище" age="Вік" />
+      <TableTitle username="Ім'я" surname="Прізвище" age="Вік" />
       <tr className={style.table_rows}>
-        {usersList.map((user) => (
-          <>
-            <th className={style.name_of_user}>{user.username}</th>
-            <th className={style.surname_of_user}>{user.surname}</th>
-            <th className={style.age_of_user}>{user.age}</th>
-          </>
+        {usersList.map((user, index) => (
+          <React.Fragment key={index}>
+            <td className={style.name_of_user}>{user.username}</td>
+            <td className={style.surname_of_user}>{user.surname}</td>
+            <td className={style.age_of_user}>{user.age}</td>
+          </React.Fragment>
         ))}
       </tr>
     </table>
