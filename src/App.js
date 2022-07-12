@@ -7,6 +7,8 @@ import Dialogs from "./components/Dialogs";
 
 import "./App.css";
 
+import { USERS_LIST, POST_DATA } from "./utils/static/constants";
+
 function App() {
   return (
     <div className="app-wrapper">
@@ -14,8 +16,8 @@ function App() {
       <Nav />
       <div className="app-wrapper-content">
         <Routes>
-          <Route path="profile" element={<Profile />} />
-          <Route path="dialogs" element={<Dialogs />} />
+          <Route path="profile" element={<Profile messageList={POST_DATA} />} />
+          <Route path="dialogs" element={<Dialogs list={USERS_LIST} />} />
         </Routes>
       </div>
     </div>

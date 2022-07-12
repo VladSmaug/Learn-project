@@ -23,9 +23,9 @@ const TableReg = ({ usersList }) => {
         <tr className={style.table_rows}>
           {usersList.map((user, index) => (
             <React.Fragment key={index}>
-              <td className={style.name_of_user}>{user.username}</td>
-              <td className={style.surname_of_user}>{user.surname}</td>
-              <td className={style.age_of_user}>{user.age}</td>
+              <td className={style.table_cell}>{user.username}</td>
+              <td className={style.table_cell}>{user.surname}</td>
+              <td className={style.table_cell}>{user.age}</td>
             </React.Fragment>
           ))}
         </tr>

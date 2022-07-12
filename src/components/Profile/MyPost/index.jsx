@@ -2,21 +2,16 @@ import Post from "./Post";
 
 import styles from "./MyPost.module.css";
 
-const postData = [
-  { message: "Hi how are you", likes: 10, id: 1 },
-  { message: "Hello how are you?", likes: 20, id: 2 },
-];
+const PostElements = ({ messageList }) =>
+  messageList.map((post, index) => (
+    <Post key={index} message={post.message} likes={post.likes} />
+  ));
 
-const PostElements = postData.map((post, index) => (
-  <Post key={index} message={post.message} likes={post.likes} />
-));
-
-const MyPost = () => (
+const MyPost = ({ messageList }) => (
   <div className={styles.my_post_wrapper}>
     <h3>My posts</h3>
-    <textarea></textarea>
     <button>Add Post</button>
-    {PostElements}
+    <PostElements messageList={messageList} />
   </div>
 );
 
