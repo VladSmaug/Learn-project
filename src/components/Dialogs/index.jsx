@@ -2,32 +2,8 @@ import React from "react";
 import classNames from "classnames";
 import { NavLink } from "react-router-dom";
 
-import TableReg from "../MAP";
-
 import styles from "./index.module.css";
-
-const USERS_LIST = [
-  {
-    username: "Vlad",
-    surname: "H",
-    age: "25",
-  },
-  {
-    username: "Vlad",
-    surname: "H",
-    age: "25",
-  },
-  {
-    username: "Vlad",
-    surname: "H",
-    age: "25",
-  },
-  {
-    username: "Vlad",
-    surname: "H",
-    age: "25",
-  },
-];
+import TableReg from "../MAP";
 
 const dialogsData = [
   { id: 1, name: "Vlad" },
@@ -47,11 +23,13 @@ const DialogItem = (props) => {
     </div>
   );
 };
+
 const MessageItem = (props) => {
   const { text } = props;
   return <div className={styles.message}>{text}</div>;
 };
-const Dialogs = () => {
+
+const Dialogs = ({ list }) => {
   return (
     <div className={styles.dialogs}>
       <div className={styles.dialogsItems}>
@@ -68,8 +46,9 @@ const Dialogs = () => {
           ))}
         />
       </div>
-      <TableReg usersList={USERS_LIST} />
+      <TableReg usersList={list} />
     </div>
   );
 };
+
 export default Dialogs;
