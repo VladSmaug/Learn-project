@@ -4,10 +4,19 @@ import { NavLink } from "react-router-dom";
 
 import styles from "./Nav.module.css";
 
-const Nav = (props) => {
-  const { guide } = props;
+
+ ({ sidebar }) => {}
+      
+
+const Nav = ({ sidebar }) => {
   return (
+    
     <nav className={styles.nav}>
+      {sidebar.map((item, index) => (
+        <React.Fragment key = {index}>
+          {item.avatar}
+          {item.text}
+          <React.Fragment/>))}
       <ul className={styles.item}>
         <NavLink to="/profile" className={styles.activeLink}>
           Profile
@@ -25,7 +34,6 @@ const Nav = (props) => {
           <a href="#">Home</a>
         </li>
       </ul>
-      {guide}
     </nav>
   );
 };

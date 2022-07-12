@@ -26,13 +26,18 @@ export const POST_DATA = [
   { message: "Hello how are you?", likes: 20, id: 2 },
 ];
 
-export const USERS = [
+export const USERS_DATA = [
   {
     avatar: <img src="./images/ava1.png" alt="avatar" />,
     text: "lorem",
   },
   {
-    avatar: <img src="" alt="avatar" />,
+    avatar: (
+      <img
+        src="src\images\man-avatar-vector-silhouettes-of-people-132032.png"
+        alt="avatar"
+      />
+    ),
     text: "lorem",
   },
   {
