@@ -19,9 +19,27 @@ a.activeLink:active {
   color: gold;
 }
 
-.friends-item {
+.friends {
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
+  padding: 20px;
+  align-items: center;
+}
+
+.friends_item {
+  display: flex;
+  align-items: center;
+}
+
+.friends_item img {
   width: 30px;
   height: 30px;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.friends_item a {
+  text-decoration: none;
+  color: #758473;
 }

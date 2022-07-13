@@ -24,11 +24,14 @@ const Nav = ({ sidebar }) => {
           <a href="#">Home</a>
         </li>
       </ul>
-      <div className="friends-item">
+      <div className={styles.friends}>
+        <div>Friends</div>
         {sidebar.map((item, index) => (
           <React.Fragment key={index}>
-            <div>{item.avatar}</div>
-            <div>{item.text}</div>
+            <div className={styles.friends_item}>
+              <a href="#">{item.avatar}</a>
+              <a href="#">{item.text}</a>
+            </div>
           </React.Fragment>
         ))}
       </div>
