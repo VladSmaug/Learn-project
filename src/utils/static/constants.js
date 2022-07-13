@@ -28,13 +28,13 @@ export const POST_DATA = [
 
 export const USERS_DATA = [
   {
-    avatar: <img src="./images/ava1.png" alt="avatar" />,
+    avatar: <img src="public\images\ava1.png" alt="avatar" />,
     text: "lorem",
   },
   {
     avatar: (
       <img
-        src="src\images\man-avatar-vector-silhouettes-of-people-132032.png"
+        src="public\images\man-avatar-vector-silhouettes-of-people-132032.png"
         alt="avatar"
       />
     ),
@@ -43,7 +43,7 @@ export const USERS_DATA = [
   {
     avatar: (
       <img
-        src="src\images\pngtree-human-avatar-free-vector-png-image_4825373.png"
+        src="public\images\pngtree-human-avatar-free-vector-png-image_4825373.png"
         alt="avatar"
       />
     ),
