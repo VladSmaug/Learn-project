@@ -27,8 +27,8 @@ const Nav = ({ sidebar }) => {
       <div className="friends-item">
         {sidebar.map((item, index) => (
           <React.Fragment key={index}>
-            {item.avatar}
-            {item.text}
+            <div>{item.avatar}</div>
+            <div>{item.text}</div>
           </React.Fragment>
         ))}
       </div>

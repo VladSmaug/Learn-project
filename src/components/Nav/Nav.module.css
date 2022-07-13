@@ -2,18 +2,26 @@
   grid-area: nav;
   background-color: wheat;
 }
+
 .nav ul {
   list-style: none;
   display: flex;
   flex-direction: column;
 }
+
 .item a {
   text-decoration: none;
   color: white;
 }
+
 a.activeLink:active {
   text-decoration: none;
   color: gold;
 }
+
 .friends-item {
+  display: flex;
+  justify-content: space-between;
+  width: 30px;
+  height: 30px;
 }
