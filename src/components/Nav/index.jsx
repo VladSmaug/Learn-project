@@ -4,8 +4,7 @@ import { NavLink } from "react-router-dom";
 
 import styles from "./Nav.module.css";
 
-const Nav = (props) => {
-  const { guide } = props;
+const Nav = ({ sidebar }) => {
   return (
     <nav className={styles.nav}>
       <ul className={styles.item}>
@@ -25,7 +24,17 @@ const Nav = (props) => {
           <a href="#">Home</a>
         </li>
       </ul>
-      {guide}
+      <div className={styles.friends}>
+        <div>Friends</div>
+        {sidebar.map((item, index) => (
+          <React.Fragment key={index}>
+            <div className={styles.friends_item}>
+              <a href="#">{item.avatar}</a>
+              <a href="#">{item.text}</a>
+            </div>
+          </React.Fragment>
+        ))}
+      </div>
     </nav>
   );
 };

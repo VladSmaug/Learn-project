@@ -7,13 +7,13 @@ import Dialogs from "./components/Dialogs";
 
 import "./App.css";
 
-import { USERS_LIST, POST_DATA } from "./utils/static/constants";
+import { USERS_LIST, POST_DATA, USERS_DATA } from "./utils/static/constants";
 
 function App() {
   return (
     <div className="app-wrapper">
       <Header nameLogoDefault="1" nameLogoSample="2" />
-      <Nav />
+      <Nav sidebar={USERS_DATA} />
       <div className="app-wrapper-content">
         <Routes>
           <Route path="profile" element={<Profile messageList={POST_DATA} />} />
