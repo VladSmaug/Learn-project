@@ -30,15 +30,16 @@ const MessageItem = (props) => {
 };
 
 const areaRef = createRef();
+
 const onClickHandler = () => {
   const areaValue = areaRef.current?.value;
   alert(areaValue);
 };
+
 const onChangeHandler = (event) => {
   console.log(event.target.value);
 };
 
-console.log(areaRef, "areaRef");
 const Dialogs = ({ list }) => {
   return (
     <div className={styles.dialogs}>
@@ -63,10 +64,5 @@ const Dialogs = ({ list }) => {
     </div>
   );
 };
-
-/* onchange;
-onsubmit;
-onclick;
-onreset; */
 
 export default Dialogs;

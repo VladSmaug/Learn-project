@@ -1,7 +1,8 @@
+import { createRef } from "react";
+
 import Post from "./Post";
 
 import styles from "./MyPost.module.css";
-import { createRef } from "react";
 
 const PostElements = ({ messageList }) =>
   messageList.map((post, index) => (
