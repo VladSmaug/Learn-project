@@ -11,18 +11,16 @@ function App(props) {
   return (
     <div className="app-wrapper">
       <Header nameLogoDefault="1" nameLogoSample="2" />
-      <Nav sidebar={props.appState.NAV_FRIENDS.USERS_DATA} />
+      <Nav sidebar={props.state.NAV_FRIENDS.USERS_DATA} />
       <div className="app-wrapper-content">
         <Routes>
           <Route
             path="profile"
-            element={
-              <Profile messageList={props.appState.MESSAGES.POST_DATA} />
-            }
+            element={<Profile messageList={props.state.MESSAGES.POST_DATA} />}
           />
           <Route
             path="dialogs"
-            element={<Dialogs list={props.appState.DIALOGS.USERS_LIST} />}
+            element={<Dialogs list={props.state.DIALOGS.USERS_LIST} />}
           />
         </Routes>
       </div>
