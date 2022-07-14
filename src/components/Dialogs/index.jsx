@@ -29,10 +29,16 @@ const MessageItem = (props) => {
   return <div className={styles.message}>{text}</div>;
 };
 
-const createMessage = () => {
-  createRef();
+const areaRef = createRef();
+const onClickHandler = () => {
+  const areaValue = areaRef.current?.value;
+  alert(areaValue);
+};
+const onChangeHandler = (event) => {
+  console.log(event.target.value);
 };
 
+console.log(areaRef, "areaRef");
 const Dialogs = ({ list }) => {
   return (
     <div className={styles.dialogs}>
@@ -51,11 +57,16 @@ const Dialogs = ({ list }) => {
         />
       </div>
       <TableReg usersList={list} />
-
-      <textarea ref={createMessage}></textarea>
-      <button onClick={}></button>
+      <textarea ref={areaRef} />
+      <button onClick={onClickHandler}>Submit</button>{" "}
+      <input type="text" onChange={onChangeHandler} />
     </div>
   );
 };
+
+/* onchange;
+onsubmit;
+onclick;
+onreset; */
 
 export default Dialogs;
