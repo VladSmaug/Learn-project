@@ -14,7 +14,8 @@ const newPostElement = () => {
 };
 
 const addPost = () => {
-  alert("Hey!");
+  const text = newPostElement.current.value;
+  alert(text);
 };
 
 const MyPost = ({ messageList }) => (
@@ -23,7 +24,7 @@ const MyPost = ({ messageList }) => (
     <div>
       <textarea ref={newPostElement}></textarea>
     </div>
-    <button onClick={newPostElement}>Add Post</button>
+    <button onClick={addPost}>Add Post</button>
     <PostElements messageList={messageList} />
   </div>
 );
