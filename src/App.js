@@ -7,7 +7,7 @@ import Dialogs from "./components/Dialogs";
 
 import "./App.css";
 
-function App(props) {
+const App = (props) => {
   return (
     <div className="app-wrapper">
       <Header nameLogoDefault="1" nameLogoSample="2" />
@@ -26,6 +26,6 @@ function App(props) {
       </div>
     </div>
   );
-}
+};
 
 export default App;
