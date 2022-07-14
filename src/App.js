@@ -7,21 +7,25 @@ import Dialogs from "./components/Dialogs";
 
 import "./App.css";
 
-import { USERS_LIST, POST_DATA, USERS_DATA } from "./utils/static/constants";
-
-function App() {
+const App = (props) => {
   return (
     <div className="app-wrapper">
       <Header nameLogoDefault="1" nameLogoSample="2" />
-      <Nav sidebar={USERS_DATA} />
+      <Nav sidebar={props.state.NAV_FRIENDS.USERS_DATA} />
       <div className="app-wrapper-content">
         <Routes>
-          <Route path="profile" element={<Profile messageList={POST_DATA} />} />
-          <Route path="dialogs" element={<Dialogs list={USERS_LIST} />} />
+          <Route
+            path="profile"
+            element={<Profile messageList={props.state.MESSAGES.POST_DATA} />}
+          />
+          <Route
+            path="dialogs"
+            element={<Dialogs list={props.state.DIALOGS.USERS_LIST} />}
+          />
         </Routes>
       </div>
     </div>
   );
-}
+};
 
 export default App;

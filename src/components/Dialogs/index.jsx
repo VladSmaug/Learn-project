@@ -1,4 +1,4 @@
-import React from "react";
+import React, { createRef } from "react";
 import classNames from "classnames";
 import { NavLink } from "react-router-dom";
 
@@ -29,6 +29,17 @@ const MessageItem = (props) => {
   return <div className={styles.message}>{text}</div>;
 };
 
+const areaRef = createRef();
+
+const onClickHandler = () => {
+  const areaValue = areaRef.current?.value;
+  alert(areaValue);
+};
+
+const onChangeHandler = (event) => {
+  console.log(event.target.value);
+};
+
 const Dialogs = ({ list }) => {
   return (
     <div className={styles.dialogs}>
@@ -47,6 +58,9 @@ const Dialogs = ({ list }) => {
         />
       </div>
       <TableReg usersList={list} />
+      <textarea ref={areaRef} />
+      <button onClick={onClickHandler}>Submit</button>{" "}
+      <input type="text" onChange={onChangeHandler} />
     </div>
   );
 };

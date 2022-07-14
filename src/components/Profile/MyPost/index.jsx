@@ -1,3 +1,5 @@
+import { createRef } from "react";
+
 import Post from "./Post";
 
 import styles from "./MyPost.module.css";
@@ -7,10 +9,21 @@ const PostElements = ({ messageList }) =>
     <Post key={index} message={post.message} likes={post.likes} />
   ));
 
+const newPostElement = () => {
+  createRef();
+};
+
+const addPost = () => {
+  alert("Hey!");
+};
+
 const MyPost = ({ messageList }) => (
   <div className={styles.my_post_wrapper}>
     <h3>My posts</h3>
-    <button>Add Post</button>
+    <div>
+      <textarea ref={newPostElement}></textarea>
+    </div>
+    <button onClick={newPostElement}>Add Post</button>
     <PostElements messageList={messageList} />
   </div>
 );
