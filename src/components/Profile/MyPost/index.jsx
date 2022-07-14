@@ -13,18 +13,13 @@ const newPostElement = () => {
   createRef();
 };
 
-const addPost = () => {
-  const text = newPostElement.current.value;
-  alert(text);
-};
-
-const MyPost = ({ messageList }) => (
+const MyPost = ({ messageList }, { addPost }) => (
   <div className={styles.my_post_wrapper}>
     <h3>My posts</h3>
     <div>
       <textarea ref={newPostElement}></textarea>
     </div>
-    <button onClick={addPost}>Add Post</button>
+    <button onClick={() => {}}>Add Post</button>
     <PostElements messageList={messageList} />
   </div>
 );
