@@ -56,4 +56,14 @@ const state = {
     ],
   },
 };
+
+export const addPost = (postMessage) => {
+  const newPost = {
+    id: 1,
+    message: postMessage,
+    likes: 0,
+  };
+  state.MESSAGES.POST_DATA.push(newPost);
+};
+
 export default state;

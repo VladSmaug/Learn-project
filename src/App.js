@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Nav from "./components/Nav";
 import Profile from "./components/Profile";
 import Dialogs from "./components/Dialogs";
+import { addPost } from "./redux/state";
 
 import "./App.css";
 
