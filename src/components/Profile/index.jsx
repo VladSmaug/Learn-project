@@ -5,12 +5,12 @@ import MyPost from "./MyPost";
 
 import styles from "./Profile.module.css";
 
-const Profile = ({ messageList }) => {
+const Profile = ({ messageList }, { addPost }) => {
   return (
     <div>
       <div className={styles.content}>
         <MyInfo />
-        <MyPost messageList={messageList} />
+        <MyPost addPost={addPost} messageList={messageList} />
       </div>
     </div>
   );

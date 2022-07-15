@@ -9,21 +9,22 @@ const PostElements = ({ messageList }) =>
     <Post key={index} message={post.message} likes={post.likes} />
   ));
 
+export const addPost = () => {
+  const text = newPostElement.current.value;
+  addPost(text);
+};
+
 const newPostElement = () => {
   createRef();
 };
 
-const addPost = () => {
-  alert("Hey!");
-};
-
-const MyPost = ({ messageList }) => (
+const MyPost = ({ messageList }, { addPost }) => (
   <div className={styles.my_post_wrapper}>
     <h3>My posts</h3>
     <div>
       <textarea ref={newPostElement}></textarea>
     </div>
-    <button onClick={newPostElement}>Add Post</button>
+    <button onClick={{ addPost }}>Add Post</button>
     <PostElements messageList={messageList} />
   </div>
 );

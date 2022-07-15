@@ -17,6 +17,7 @@ const App = (props) => {
           <Route
             path="profile"
             element={<Profile messageList={props.state.MESSAGES.POST_DATA} />}
+            addPost={props.addPost}
           />
           <Route
             path="dialogs"
