@@ -9,7 +9,7 @@ const PostElements = ({ messageList }) =>
     <Post key={index} message={post.message} likes={post.likes} />
   ));
 
-const addPost = () => {
+const addPost = ({ MyPost }) => {
   const text = newPostElement.current.value;
   addPost(text);
 };
@@ -24,7 +24,7 @@ const MyPost = ({ messageList }, { addPost }) => (
     <div>
       <textarea ref={newPostElement}></textarea>
     </div>
-    <button onClick={() => {}}>Add Post</button>
+    <button onClick={{ addPost }}>Add Post</button>
     <PostElements messageList={messageList} />
   </div>
 );
