@@ -9,7 +9,7 @@ const PostElements = ({ messageList }) =>
     <Post key={index} message={post.message} likes={post.likes} />
   ));
 
-const addPost = () => {
+export const addPost = () => {
   const text = newPostElement.current.value;
   addPost(text);
 };
