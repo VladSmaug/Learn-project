@@ -10,7 +10,7 @@ import "./App.css";
 const App = (props) => {
   return (
     <div className="app-wrapper">
-      <Header nameLogoDefault="1" nameLogoSample="2" />
+      <Header />
       <Nav sidebar={props.state.NAV_FRIENDS.USERS_DATA} />
       <div className="app-wrapper-content">
         <Routes>

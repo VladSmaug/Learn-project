@@ -1,3 +1,5 @@
+import { rerenderEntireTree } from "../render";
+
 const state = {
   DIALOGS: {
     USERS_LIST: [
@@ -64,6 +66,7 @@ export const addPost = (postMessage) => {
     likes: 0,
   };
   state.MESSAGES.POST_DATA.push(newPost);
+  rerenderEntireTree(state);
 };
 
 export default state;
