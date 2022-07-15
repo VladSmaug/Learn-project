@@ -1,6 +1,6 @@
 import { rerenderEntireTree } from "../render";
 
-const state = {
+export const state = {
   DIALOGS: {
     USERS_LIST: [
       {
