@@ -19,6 +19,7 @@ const App = (props) => {
             element={
               <Profile
                 messageList={props.state.MESSAGES.POST_DATA}
+                newPost={props.state.MESSAGES.NEW_POST}
                 addPost={props.addPost}
               />
             }

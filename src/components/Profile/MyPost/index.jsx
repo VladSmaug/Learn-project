@@ -18,11 +18,13 @@ const addPostHandler = () => {
   addPost(text);
 };
 
-const MyPost = ({ messageList }) => (
+const onPostChange = () => {};
+
+const MyPost = ({ messageList, newPost }) => (
   <div className={styles.my_post_wrapper}>
     <h3>My posts</h3>
     <div>
-      <textarea ref={areaRef}></textarea>
+      <textarea onChange={onPostChange} value={newPost} ref={areaRef} />
     </div>
     <button onClick={addPostHandler}>Add Post</button>
     <PostElements messageList={messageList} />
