@@ -1,6 +1,7 @@
 import { createRef } from "react";
 
 import Post from "./Post";
+import { addPost } from "./../../../redux/state";
 
 import styles from "./MyPost.module.css";
 
@@ -9,22 +10,21 @@ const PostElements = ({ messageList }) =>
     <Post key={index} message={post.message} likes={post.likes} />
   ));
 
-export const addPost = () => {
-  const text = newPostElement.current.value;
+const areaRef = createRef();
+
+const addPostHandler = () => {
+  const text = areaRef.current.value;
+  console.log(text);
   addPost(text);
 };
 
-const newPostElement = () => {
-  createRef();
-};
-
-const MyPost = ({ messageList }, { addPost }) => (
+const MyPost = ({ messageList }) => (
   <div className={styles.my_post_wrapper}>
     <h3>My posts</h3>
     <div>
-      <textarea ref={newPostElement}></textarea>
+      <textarea ref={areaRef}></textarea>
     </div>
-    <button onClick={{ addPost }}>Add Post</button>
+    <button onClick={addPostHandler}>Add Post</button>
     <PostElements messageList={messageList} />
   </div>
 );
