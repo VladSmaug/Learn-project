@@ -30,6 +30,7 @@ export const state = {
       { message: "Hi how are you", likes: 10, id: 1 },
       { message: "Hello how are you?", likes: 20, id: 2 },
     ],
+    NEW_POST: "asd",
   },
   NAV_FRIENDS: {
     USERS_DATA: [
