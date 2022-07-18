@@ -5,7 +5,8 @@ import MyPost from "./MyPost";
 
 import styles from "./Profile.module.css";
 
-const Profile = ({ messageList }, { addPost }) => {
+const Profile = (props) => {
+  const { messageList, addPost } = props;
   return (
     <div>
       <div className={styles.content}>
