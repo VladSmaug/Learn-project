@@ -1,3 +1,16 @@
+.wrapper {
+  display: flex;
+  justify-content: flex-start;
+}
+.wrapper img {
+  padding: 20px;
+}
+.text {
+  display: flex;
+  height: 200px;
+  flex-direction: column;
+  padding: 20px;
+}
 .avatar {
   width: 150px;
   height: 150px;
