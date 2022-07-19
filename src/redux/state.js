@@ -60,13 +60,14 @@ export const state = {
   },
 };
 
-export const addPost = (postMessage) => {
+export const addPost = () => {
   const newPost = {
-    message: postMessage,
+    message: state.MESSAGES.NEW_POST_TEXT,
     likes: 0,
     id: 1,
   };
   state.MESSAGES.POST_DATA.push(newPost);
+  state.MESSAGES.NEW_POST_TEXT = "";
   rerenderEntireTree(state);
 };
 
