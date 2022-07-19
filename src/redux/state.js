@@ -70,4 +70,9 @@ export const addPost = (postMessage) => {
   rerenderEntireTree(state);
 };
 
+export const updateNewPostText = (newPostText) => {
+  state.MESSAGES.NEW_POST_TEXT = newPostText;
+  rerenderEntireTree(state);
+};
+
 export default state;

@@ -6,7 +6,7 @@ import MyPost from "./MyPost";
 import styles from "./Profile.module.css";
 
 const Profile = (props) => {
-  const { messageList, addPost } = props;
+  const { messageList, addPost, updateNewPostText } = props;
   return (
     <div>
       <div className={styles.content}>
@@ -14,7 +14,7 @@ const Profile = (props) => {
         <MyPost
           addPost={addPost}
           messageList={messageList}
-          newPostText={props.newPostText}
+          updateNewPostText={props.updateNewPostText}
         />
       </div>
     </div>
