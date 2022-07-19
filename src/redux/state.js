@@ -30,6 +30,7 @@ export const state = {
       { message: "Hi how are you", likes: 10, id: 1 },
       { message: "Hello how are you?", likes: 20, id: 2 },
     ],
+    NEW_POST_TEXT: "asd",
   },
   NAV_FRIENDS: {
     USERS_DATA: [
@@ -59,13 +60,19 @@ export const state = {
   },
 };
 
-export const addPost = (postMessage) => {
+export const addPost = () => {
   const newPost = {
-    message: postMessage,
+    message: state.MESSAGES.NEW_POST_TEXT,
     likes: 0,
     id: 1,
   };
   state.MESSAGES.POST_DATA.push(newPost);
+  state.MESSAGES.NEW_POST_TEXT = "";
+  rerenderEntireTree(state);
+};
+
+export const updateNewPostText = (newPostText) => {
+  state.MESSAGES.NEW_POST_TEXT = newPostText;
   rerenderEntireTree(state);
 };
 

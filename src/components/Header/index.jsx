@@ -9,10 +9,7 @@ const Header = () => {
         src="https://cdn.logo.com/hotlink-ok/logo-social.png"
         alt="Picture"
       />
-      <img
-        src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"
-        alt="Picture"
-      />
+      <div className={styles.text}>MY FIRST APP</div>
     </header>
   );
 };
