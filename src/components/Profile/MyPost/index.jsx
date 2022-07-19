@@ -16,6 +16,7 @@ const MyPost = (props) => {
 
   const addPostHandler = () => {
     addPost();
+    areaRef.current.value = "";
   };
 
   const PostElements = ({ messageList }) =>
