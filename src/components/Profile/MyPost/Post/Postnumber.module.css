@@ -1,6 +1,5 @@
 .post_wrapper {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   padding: 20px;
 }
@@ -9,4 +8,41 @@
   height: 50px;
   border-radius: 50%;
   padding-right: 10px;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 300px;
+  height: 60px;
+  border-radius: 10px;
+  background-color: white;
+  align-items: center;
+}
+
+.username {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 5px;
+  padding: 5px;
+  background-color: violet;
+  border-radius: 50%;
+}
+.userstatus {
+}
+
+.likescount {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 10px;
+}
+.message {
+  position: absolute;
+  background-color: rgba(128, 128, 128, 0.253);
+  padding: 15px;
+  margin: 5px;
+  border-radius: 5px;
 }
