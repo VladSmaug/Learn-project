@@ -62,6 +62,10 @@ export const state = {
   },
 };
 
+export const subscribe = (observer) => {
+  rerenderEntireTree = observer;
+};
+
 export const addPost = () => {
   const newPost = {
     message: state.MESSAGES.NEW_POST_TEXT,
