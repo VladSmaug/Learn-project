@@ -20,15 +20,22 @@ const addPostHandler = () => {
 
 const onPostChanger = () => {};
 
-const MyPost = ({ messageList }) => (
-  <div className={styles.my_post_wrapper}>
-    <h3>My posts</h3>
-    <div>
-      <textarea onChange={onPostChanger} value={newPostText} ref={areaRef} />
+const MyPost = (props) => {
+  const { messageList, newPostText } = props;
+  return (
+    <div className={styles.my_post_wrapper}>
+      <h3>My posts</h3>
+      <div>
+        <textarea
+          onChange={onPostChanger}
+          value={props.newPostText}
+          ref={areaRef}
+        />
+      </div>
+      <button onClick={addPostHandler}>Add Post</button>
+      <PostElements messageList={props.messageList} />
     </div>
-    <button onClick={addPostHandler}>Add Post</button>
-    <PostElements messageList={messageList} />
-  </div>
-);
+  );
+};
 
 export default MyPost;
