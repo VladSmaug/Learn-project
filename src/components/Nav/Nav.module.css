@@ -1,6 +1,9 @@
 .nav {
   grid-area: nav;
-  background-color: wheat;
+  background-color: rgb(152, 236, 133);
+}
+.nav :hover {
+  background-color: red;
 }
 
 .nav ul {
@@ -24,7 +27,6 @@ a.activeLink:active {
   justify-content: space-between;
   flex-direction: column;
   padding: 20px;
-  align-items: center;
 }
 
 .friends_item {
