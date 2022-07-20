@@ -13,7 +13,7 @@ const Post = (props) => {
       />
       <div className={styles.description}>
         <div className={styles.username}>Vlad</div>
-        {/* <div className={styles.userstatus}>Description </div> */}
+        <div className={styles.userstatus}>Description </div>
         <div className={styles.likescount}>{likes}</div>
         <div className={styles.message}>{message}</div>
       </div>
