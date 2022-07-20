@@ -64,22 +64,24 @@ let store = {
   _callSubscriber() {
     console.log("state");
   },
-  addPost() {
-    const newPost = {
-      message: this._state.MESSAGES.NEW_POST_TEXT,
-      likes: 0,
-      id: 1,
-    };
-    this._state.MESSAGES.POST_DATA.push(newPost);
-    this._state.MESSAGES.NEW_POST_TEXT = "";
-    this._callSubscriber(this._state);
-  },
-  updateNewPostText(newPostText) {
-    this._state.MESSAGES.NEW_POST_TEXT = newPostText;
-    this._callSubscriber(this._state);
-  },
+
   subscribe(observer) {
     this._callSubscriber = observer;
+  },
+  dispatch(action) {
+    if (action.type === "ADD-POST") {
+      const newPost = {
+        message: this._state.MESSAGES.NEW_POST_TEXT,
+        likes: 0,
+        id: 1,
+      };
+      this._state.MESSAGES.POST_DATA.push(newPost);
+      this._state.MESSAGES.NEW_POST_TEXT = "";
+      this._callSubscriber(this._state);
+    } else if (action.type === "UPDATE-NEW-POST-TEXT") {
+      this._state.MESSAGES.NEW_POST_TEXT = action.newPostText;
+      this._callSubscriber(this._state);
+    }
   },
 };
 
