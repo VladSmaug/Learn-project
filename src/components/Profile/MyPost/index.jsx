@@ -1,8 +1,7 @@
 import { createRef } from "react";
 
 import Post from "./Post";
-import { addPost } from "./../../../redux/state";
-import { updateNewPostText } from "./../../../redux/state";
+import store from "./../../../redux/state";
 
 import styles from "./MyPost.module.css";
 
@@ -11,11 +10,11 @@ const MyPost = (props) => {
 
   const onPostHandler = () => {
     const text = areaRef.current.value;
-    updateNewPostText(text);
+    store.updateNewPostText(text);
   };
 
   const addPostHandler = () => {
-    addPost();
+    store.addPost();
     areaRef.current.value = "";
   };
 
