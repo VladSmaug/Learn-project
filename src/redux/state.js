@@ -27,6 +27,22 @@ let store = {
         },
       ],
     },
+    CONVERSATIONS: [
+      { id: 1, name: "Vlad" },
+      { id: 2, name: "Somebody else" },
+      { id: 3, name: "Somebody else" },
+      { id: 4, name: "Somebody else" },
+      { id: 5, name: "Somebody else" },
+      { id: 6, name: "Somebody else" },
+    ],
+    CONVERSATION_MESSAGES: [
+      { text: "lorem", id: 1 },
+      { text: "lorem", id: 2 },
+      { text: "lorem", id: 3 },
+      { text: "lorem", id: 4 },
+      { text: "lorem", id: 5 },
+      { text: "lorem", id: 6 },
+    ],
     MESSAGES: {
       POST_DATA: [
         { message: "Hi how are you", likes: 10, id: 1 },

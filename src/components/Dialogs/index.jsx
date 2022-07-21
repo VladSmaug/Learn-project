@@ -3,25 +3,12 @@ import classNames from "classnames";
 import { NavLink } from "react-router-dom";
 
 import styles from "./index.module.css";
+import store from "../../redux/state";
 // import TableReg from "../MAP";
 
-const dialogsData = [
-  { id: 1, name: "Vlad" },
-  { id: 2, name: "Somebody else" },
-  { id: 3, name: "Somebody else" },
-  { id: 4, name: "Somebody else" },
-  { id: 5, name: "Somebody else" },
-  { id: 6, name: "Somebody else" },
-];
+const dialogsData = [];
 
-const messagesData = [
-  { text: "lorem", id: 1 },
-  { text: "lorem", id: 2 },
-  { text: "lorem", id: 3 },
-  { text: "lorem", id: 4 },
-  { text: "lorem", id: 5 },
-  { text: "lorem", id: 6 },
-];
+const messagesData = [];
 
 const DialogItem = (props) => {
   const { name, id } = props;
@@ -53,12 +40,12 @@ const Dialogs = ({ list }) => {
     <div className={styles.dialogs}>
       <div className={styles.dialogsItems}>
         <DialogItem
-          name={dialogsData.map((dia, index) => (
+          name={store._state.CONVERSATIONS.map((dia, index) => (
             <li key={index}>{dia.name}</li>
           ))}
         />
         <MessageItem
-          text={messagesData.map((message, index) => (
+          text={store._state.CONVERSATION_MESSAGES.map((message, index) => (
             <li key={index}>{message.text}</li>
           ))}
         />
