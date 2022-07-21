@@ -1,24 +1,21 @@
-.dialogs {
+.dialogsItems {
   display: flex;
   justify-content: flex-start;
-}
-.dialogsItems {
-  padding: 10px;
+  text-decoration: none;
+  list-style: none;
 }
 .dialog {
   padding: 10px;
 }
-.dialog a {
+.message {
   padding: 10px;
+  width: 50px;
+  height: 50px;
+}
+.dialog a {
   text-decoration: none;
   color: green;
 }
 .active a {
   color: gold;
-}
-.messages {
-  padding: 10px;
-}
-.message {
-  padding: 10px;
 }
