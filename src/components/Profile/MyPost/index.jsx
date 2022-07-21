@@ -10,11 +10,11 @@ const MyPost = (props) => {
 
   const onPostHandler = () => {
     const text = areaRef.current.value;
-    store.updateNewPostText(text);
+    props.dispatch({ type: "UPDATE-NEW-POST-TEXT", newPostText: text });
   };
 
   const addPostHandler = () => {
-    store.addPost();
+    props.dispatch({ type: "ADD-POST" });
     areaRef.current.value = "";
   };
 
