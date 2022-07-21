@@ -19,3 +19,16 @@
 .active a {
   color: gold;
 }
+.image {
+  width: 30px;
+  height: 30px;
+  padding-right: 10px;
+}
+.link {
+  display: flex;
+  margin-bottom: 10px;
+}
+.texts {
+  display: flex;
+  justify-content: space-between;
+}
