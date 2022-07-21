@@ -78,11 +78,19 @@ let store = {
       this._state.MESSAGES.POST_DATA.push(newPost);
       this._state.MESSAGES.NEW_POST_TEXT = "";
       this._callSubscriber(this._state);
-    } else if (action.type === "UPDATE-NEW-POST-TEXT") {
+    } else {
       this._state.MESSAGES.NEW_POST_TEXT = action.newPostText;
       this._callSubscriber(this._state);
     }
   },
+};
+
+export const addPostActionCreator = () => {
+  return { type: "ADD-POST" };
+};
+
+export const updateNewPostTextActionCreator = (text) => {
+  return { type: "UPDATE-NEW-POST-TEXT", newPostText: text };
 };
 
 export default store;

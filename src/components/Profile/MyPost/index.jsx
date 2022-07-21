@@ -1,7 +1,6 @@
 import { createRef } from "react";
 
 import Post from "./Post";
-import store from "./../../../redux/state";
 
 import styles from "./MyPost.module.css";
 
@@ -10,11 +9,11 @@ const MyPost = (props) => {
 
   const onPostHandler = () => {
     const text = areaRef.current.value;
-    props.dispatch({ type: "UPDATE-NEW-POST-TEXT", newPostText: text });
+    props.dispatch(updateNewPostTextActionCreator(text));
   };
 
   const addPostHandler = () => {
-    props.dispatch({ type: "ADD-POST" });
+    props.dispatch(addPostActionCreator());
     areaRef.current.value = "";
   };
 
