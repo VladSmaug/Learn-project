@@ -40,7 +40,7 @@ const Dialogs = ({ list }) => {
     <div className={styles.dialogs}>
       <div className={styles.dialogsItems}>
         <DialogItem
-          name={store._state.CONVERSATIONS.map((dia, index) => (
+          name={store._state.DIALOGS.CONVERSATIONS.map((dia, index) => (
             <li className={styles.link} key={index}>
               <img
                 className={styles.image}
@@ -52,11 +52,13 @@ const Dialogs = ({ list }) => {
           ))}
         />
         <MessageItem
-          text={store._state.CONVERSATION_MESSAGES.map((message, index) => (
-            <li className={styles.texts} key={index}>
-              {message.text}
-            </li>
-          ))}
+          text={store._state.DIALOGS.CONVERSATION_MESSAGES.map(
+            (message, index) => (
+              <li className={styles.texts} key={index}>
+                {message.text}
+              </li>
+            )
+          )}
         />
       </div>
 
