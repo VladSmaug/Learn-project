@@ -4,6 +4,10 @@ import { NavLink } from "react-router-dom";
 
 import styles from "./index.module.css";
 import store from "../../redux/state";
+import {
+  sendMessageCreator,
+  updateNewMessageBodyCreator,
+} from "./../../redux/state";
 // import TableReg from "../MAP";
 
 const dialogsData = [];
@@ -35,6 +39,14 @@ const MessageItem = (props) => {
 //   console.log(event.target.value);
 // };
 
+let onSendMessageClick = () => {
+  store.dispatch(sendMessageCreator());
+};
+let onNewMessageChange = (event) => {
+  let body = event.target.value;
+  store.dispatch(updateNewMessageBodyCreator(body));
+};
+
 const Dialogs = ({ list }) => {
   return (
     <div className={styles.dialogs}>
@@ -60,6 +72,14 @@ const Dialogs = ({ list }) => {
             )
           )}
         />
+        <div className={styles.workspace}>
+          <textarea
+            value={store._state.NEW_MESSAGE_TEXT}
+            onChange={onNewMessageChange}
+            placeholder="Enter your message"
+          />
+          <button onClick={onSendMessageClick}>Send</button>
+        </div>
       </div>
 
       {/*  <TableReg usersList={list} />

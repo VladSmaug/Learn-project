@@ -90,8 +90,9 @@ let store = {
   subscribe(observer) {
     this._callSubscriber = observer;
   },
-  dispatch(action) {
-    if (action.type === ADD_POST) {
+  switch (dispatch(action)) {
+  case action.type === ADD_POST:
+    {
       const newPost = {
         message: this._state.MESSAGES.NEW_POST_TEXT,
         likes: 0,
@@ -100,20 +101,57 @@ let store = {
       this._state.MESSAGES.POST_DATA.push(newPost);
       this._state.MESSAGES.NEW_POST_TEXT = "";
       this._callSubscriber(this._state);
-    } else if (action.type === UPDATE_NEW_MESSAGE_TEXT) {
+    }
+    break;
+  case action.type === UPDATE_NEW_MESSAGE_TEXT:
+    {
       this._state.DIALOGS.NEW_MESSAGE_TEXT = action.body;
       this._callSubscriber(this._state);
-    } else if (action.type === SEND_MESSAGE) {
+    }
+    break;
+  case action.type === SEND_MESSAGE:
+    {
       let body = this._state.DIALOGS.NEW_MESSAGE_TEXT;
       this._state.DIALOGS.NEW_MESSAGE_TEXT = "";
       this._state.DIALOGS.CONVERSATION_MESSAGES.push({ text: body, id: 7 });
       this._callSubscriber(this._state);
-    } else {
+    }
+    break;
+  default:
+    {
       this._state.MESSAGES.NEW_POST_TEXT = action.newPostText;
       this._callSubscriber(this._state);
     }
-  },
+    break;
+}
+  // dispatch(action) {
+  //   if (action.type === ADD_POST) {
+  //     const newPost = {
+  //       message: this._state.MESSAGES.NEW_POST_TEXT,
+  //       likes: 0,
+  //       id: 1,
+  //     };
+  //     this._state.MESSAGES.POST_DATA.push(newPost);
+  //     this._state.MESSAGES.NEW_POST_TEXT = "";
+  //     this._callSubscriber(this._state);
+  //   } else if (action.type === UPDATE_NEW_MESSAGE_TEXT) {
+  //     this._state.DIALOGS.NEW_MESSAGE_TEXT = action.body;
+  //     this._callSubscriber(this._state);
+  //   } else if (action.type === SEND_MESSAGE) {
+  //     let body = this._state.DIALOGS.NEW_MESSAGE_TEXT;
+  //     this._state.DIALOGS.NEW_MESSAGE_TEXT = "";
+  //     this._state.DIALOGS.CONVERSATION_MESSAGES.push({ text: body, id: 7 });
+  //     this._callSubscriber(this._state);
+  //   } else {
+  //     this._state.MESSAGES.NEW_POST_TEXT = action.newPostText;
+  //     this._callSubscriber(this._state);
+  //   }
+  // },
+  
+  
 };
+
+
 
 export const addPostActionCreator = () => ({ type: ADD_POST });
 
@@ -121,5 +159,13 @@ export const updateNewPostTextActionCreator = (text) => ({
   type: UPDATE_NEW_POST_TEXT,
   newPostText: text,
 });
+
+export const sendMessageCreator = () => ({ type: SEND_MESSAGE });
+
+export const updateNewMessageBodyCreator = (body) => ({
+  type: UPDATE_NEW_MESSAGE_TEXT,
+  body: body,
+});
+
 export default store;
 window.store = store;
