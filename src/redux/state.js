@@ -1,7 +1,7 @@
-let ADD_POST = "ADD-POST";
-let UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
-let UPDATE_NEW_MESSAGE_TEXT = "UPDATE_NEW_MESSAGE_TEXT";
-let SEND_MESSAGE = "SEND_MESSAGE";
+const ADD_POST = "ADD-POST";
+const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
+const UPDATE_NEW_MESSAGE_TEXT = "UPDATE_NEW_MESSAGE_TEXT";
+const SEND_MESSAGE = "SEND_MESSAGE";
 
 let store = {
   _state: {
@@ -83,75 +83,43 @@ let store = {
   getState() {
     return this._state;
   },
-  _callSubscriber() {
-    console.log("state");
-  },
-
   subscribe(observer) {
     this._callSubscriber = observer;
   },
-  switch (dispatch(action)) {
-  case action.type === ADD_POST:
-    {
-      const newPost = {
-        message: this._state.MESSAGES.NEW_POST_TEXT,
-        likes: 0,
-        id: 1,
-      };
-      this._state.MESSAGES.POST_DATA.push(newPost);
-      this._state.MESSAGES.NEW_POST_TEXT = "";
-      this._callSubscriber(this._state);
+  dispatch(action) {
+    switch (action.type) {
+      case ADD_POST:
+        const newPost = {
+          message: this._state.MESSAGES.NEW_POST_TEXT,
+          likes: 0,
+          id: 1,
+        };
+        this._state.MESSAGES.POST_DATA.push(newPost);
+        this._state.MESSAGES.NEW_POST_TEXT = "";
+        this._callSubscriber(this._state);
+
+        break;
+      case UPDATE_NEW_MESSAGE_TEXT:
+        this._state.DIALOGS.NEW_MESSAGE_TEXT = action.body;
+        this._callSubscriber(this._state);
+
+        break;
+      case SEND_MESSAGE:
+        let body = this._state.DIALOGS.NEW_MESSAGE_TEXT;
+        this._state.DIALOGS.NEW_MESSAGE_TEXT = "";
+        this._state.DIALOGS.CONVERSATION_MESSAGES.push({ text: body, id: 7 });
+        this._callSubscriber(this._state);
+
+        break;
+      default:
+        {
+          this._state.MESSAGES.NEW_POST_TEXT = action.newPostText;
+          this._callSubscriber(this._state);
+        }
+        break;
     }
-    break;
-  case action.type === UPDATE_NEW_MESSAGE_TEXT:
-    {
-      this._state.DIALOGS.NEW_MESSAGE_TEXT = action.body;
-      this._callSubscriber(this._state);
-    }
-    break;
-  case action.type === SEND_MESSAGE:
-    {
-      let body = this._state.DIALOGS.NEW_MESSAGE_TEXT;
-      this._state.DIALOGS.NEW_MESSAGE_TEXT = "";
-      this._state.DIALOGS.CONVERSATION_MESSAGES.push({ text: body, id: 7 });
-      this._callSubscriber(this._state);
-    }
-    break;
-  default:
-    {
-      this._state.MESSAGES.NEW_POST_TEXT = action.newPostText;
-      this._callSubscriber(this._state);
-    }
-    break;
-}
-  // dispatch(action) {
-  //   if (action.type === ADD_POST) {
-  //     const newPost = {
-  //       message: this._state.MESSAGES.NEW_POST_TEXT,
-  //       likes: 0,
-  //       id: 1,
-  //     };
-  //     this._state.MESSAGES.POST_DATA.push(newPost);
-  //     this._state.MESSAGES.NEW_POST_TEXT = "";
-  //     this._callSubscriber(this._state);
-  //   } else if (action.type === UPDATE_NEW_MESSAGE_TEXT) {
-  //     this._state.DIALOGS.NEW_MESSAGE_TEXT = action.body;
-  //     this._callSubscriber(this._state);
-  //   } else if (action.type === SEND_MESSAGE) {
-  //     let body = this._state.DIALOGS.NEW_MESSAGE_TEXT;
-  //     this._state.DIALOGS.NEW_MESSAGE_TEXT = "";
-  //     this._state.DIALOGS.CONVERSATION_MESSAGES.push({ text: body, id: 7 });
-  //     this._callSubscriber(this._state);
-  //   } else {
-  //     this._state.MESSAGES.NEW_POST_TEXT = action.newPostText;
-  //     this._callSubscriber(this._state);
-  //   }
-  // },
-  
-  
+  },
 };
-
-
 
 export const addPostActionCreator = () => ({ type: ADD_POST });
 

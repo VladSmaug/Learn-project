@@ -10,10 +10,6 @@ import {
 } from "./../../redux/state";
 // import TableReg from "../MAP";
 
-const dialogsData = [];
-
-const messagesData = [];
-
 const DialogItem = (props) => {
   const { name, id } = props;
   return (
@@ -39,27 +35,30 @@ const MessageItem = (props) => {
 //   console.log(event.target.value);
 // };
 
-let onSendMessageClick = () => {
+// Reference example for the next time
+
+const onSendMessageClick = () => {
   store.dispatch(sendMessageCreator());
 };
-let onNewMessageChange = (event) => {
-  let body = event.target.value;
+const onNewMessageChange = (e) => {
+  const body = e.target.value;
   store.dispatch(updateNewMessageBodyCreator(body));
 };
 
-const Dialogs = ({ list }) => {
+// const Dialogs = ({list}) - for table
+const Dialogs = () => {
   return (
     <div className={styles.dialogs}>
       <div className={styles.dialogsItems}>
         <DialogItem
-          name={store._state.DIALOGS.CONVERSATIONS.map((dia, index) => (
+          name={store._state.DIALOGS.CONVERSATIONS.map((dialogs, index) => (
             <li className={styles.link} key={index}>
               <img
                 className={styles.image}
                 src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/ea7a3c32163929.567197ac70bda.png"
-                alt=""
+                alt="users_logo"
               />
-              {dia.name}
+              {dialogs.name}
             </li>
           ))}
         />
@@ -81,7 +80,7 @@ const Dialogs = ({ list }) => {
           <button onClick={onSendMessageClick}>Send</button>
         </div>
       </div>
-
+      // Reference example for the next time
       {/*  <TableReg usersList={list} />
       <textarea ref={areaRef} />
       <button onClick={onClickHandler}>Submit</button>{" "}
