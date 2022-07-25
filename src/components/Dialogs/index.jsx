@@ -80,7 +80,7 @@ const Dialogs = () => {
           <button onClick={onSendMessageClick}>Send</button>
         </div>
       </div>
-      // Reference example for the next time
+      {/*  Reference example for the next time */}
       {/* <TableReg usersList={list} />
       <textarea ref={areaRef} />
       <button onClick={onClickHandler}>Submit</button>{" "}
