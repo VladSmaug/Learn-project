@@ -1,3 +1,6 @@
+import profileReducer from "./profile-reducer";
+import dialogsReducer from "./dialogs-reducer";
+
 const ADD_POST = "ADD-POST";
 const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
 const UPDATE_NEW_MESSAGE_TEXT = "UPDATE_NEW_MESSAGE_TEXT";
@@ -87,37 +90,10 @@ let store = {
     this._callSubscriber = observer;
   },
   dispatch(action) {
-    switch (action.type) {
-      case ADD_POST:
-        const newPost = {
-          message: this._state.MESSAGES.NEW_POST_TEXT,
-          likes: 0,
-          id: 1,
-        };
-        this._state.MESSAGES.POST_DATA.push(newPost);
-        this._state.MESSAGES.NEW_POST_TEXT = "";
-        this._callSubscriber(this._state);
+    this._state.MESSAGES = profileReducer(this._state.MESSAGES, action);
+    this._state.DIALOGS = dialogsReducer(this._state.DIALOGS, action);
 
-        break;
-      case UPDATE_NEW_MESSAGE_TEXT:
-        this._state.DIALOGS.NEW_MESSAGE_TEXT = action.body;
-        this._callSubscriber(this._state);
-
-        break;
-      case SEND_MESSAGE:
-        let body = this._state.DIALOGS.NEW_MESSAGE_TEXT;
-        this._state.DIALOGS.NEW_MESSAGE_TEXT = "";
-        this._state.DIALOGS.CONVERSATION_MESSAGES.push({ text: body, id: 7 });
-        this._callSubscriber(this._state);
-
-        break;
-      default:
-        {
-          this._state.MESSAGES.NEW_POST_TEXT = action.newPostText;
-          this._callSubscriber(this._state);
-        }
-        break;
-    }
+    this._callSubscriber(this._state);
   },
 };
 
