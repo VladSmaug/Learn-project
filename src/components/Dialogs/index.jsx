@@ -45,7 +45,7 @@ const onNewMessageChange = (e) => {
   store.dispatch(updateNewMessageBodyCreator(body));
 };
 
-// const Dialogs = ({list}) - for table
+//  const Dialogs = ({list}) - for table
 const Dialogs = () => {
   return (
     <div className={styles.dialogs}>
@@ -81,7 +81,7 @@ const Dialogs = () => {
         </div>
       </div>
       // Reference example for the next time
-      {/*  <TableReg usersList={list} />
+      {/* <TableReg usersList={list} />
       <textarea ref={areaRef} />
       <button onClick={onClickHandler}>Submit</button>{" "}
       <input type="text" onChange={onChangeHandler} /> */}
