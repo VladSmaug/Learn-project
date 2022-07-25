@@ -7,7 +7,7 @@ import store from "../../redux/state";
 import {
   sendMessageCreator,
   updateNewMessageBodyCreator,
-} from "./../../redux/state";
+} from "./../../redux/dialogs-reducer";
 // import TableReg from "../MAP";
 
 const DialogItem = (props) => {
