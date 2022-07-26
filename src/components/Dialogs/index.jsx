@@ -51,7 +51,7 @@ const Dialogs = () => {
     <div className={styles.dialogs}>
       <div className={styles.dialogsItems}>
         <DialogItem
-          name={store.DIALOGS.CONVERSATIONS.map((dialogs, index) => (
+          name={store.CONVERSATIONS.map((dialogs, index) => (
             <li className={styles.link} key={index}>
               <img
                 className={styles.image}
@@ -63,13 +63,11 @@ const Dialogs = () => {
           ))}
         />
         <MessageItem
-          text={store._state.DIALOGS.CONVERSATION_MESSAGES.map(
-            (message, index) => (
-              <li className={styles.texts} key={index}>
-                {message.text}
-              </li>
-            )
-          )}
+          text={store.CONVERSATION_MESSAGES.map((message, index) => (
+            <li className={styles.texts} key={index}>
+              {message.text}
+            </li>
+          ))}
         />
         <div className={styles.workspace}>
           <textarea
