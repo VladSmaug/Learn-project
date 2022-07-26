@@ -3,7 +3,7 @@ import classNames from "classnames";
 import { NavLink } from "react-router-dom";
 
 import styles from "./index.module.css";
-import store from "../../redux/state";
+import store from "../../redux/redux-store";
 import {
   sendMessageCreator,
   updateNewMessageBodyCreator,
@@ -51,7 +51,7 @@ const Dialogs = () => {
     <div className={styles.dialogs}>
       <div className={styles.dialogsItems}>
         <DialogItem
-          name={store._state.DIALOGS.CONVERSATIONS.map((dialogs, index) => (
+          name={store.DIALOGS.CONVERSATIONS.map((dialogs, index) => (
             <li className={styles.link} key={index}>
               <img
                 className={styles.image}
