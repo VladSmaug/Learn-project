@@ -7,25 +7,31 @@ import Dialogs from "./components/Dialogs";
 
 import "./App.css";
 
-const App = (props) => {
+const App = ({ state, dispatch }) => {
   return (
     <div className="app-wrapper">
       <Header />
-      <Nav sidebar={props.state.NAV_FRIENDS.USERS_DATA} />
+      <Nav sidebar={state.NAV_FRIENDS.USERS_DATA} />
       <div className="app-wrapper-content">
         <Routes>
           <Route
             path="profile"
             element={
               <Profile
-                messageList={props.state.MESSAGES.POST_DATA}
-                dispatch={props.dispatch}
+                messageList={state.MESSAGES.POST_DATA}
+                dispatch={dispatch}
               />
             }
           />
           <Route
             path="dialogs"
-            element={<Dialogs list={props.state.DIALOGS.USERS_LIST} />}
+            element={
+              <Dialogs
+                conversations={state.DIALOGS.CONVERSATIONS}
+                conversationMessages={state.DIALOGS.CONVERSATION_MESSAGES}
+                list={state.DIALOGS.USERS_LIST}
+              />
+            }
           />
         </Routes>
       </div>

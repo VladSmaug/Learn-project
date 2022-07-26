@@ -12,6 +12,7 @@ import {
 
 const DialogItem = (props) => {
   const { name, id } = props;
+  console.log(name, "name");
   return (
     <div className={classNames(styles.dialog, styles.active)}>
       <NavLink to={"dialogs/" + id}>{name}</NavLink>
@@ -46,12 +47,12 @@ const onNewMessageChange = (e) => {
 };
 
 //  const Dialogs = ({list}) - for table
-const Dialogs = () => {
+const Dialogs = ({ conversations, conversationMessages }) => {
   return (
     <div className={styles.dialogs}>
       <div className={styles.dialogsItems}>
         <DialogItem
-          name={store.CONVERSATIONS.map((dialogs, index) => (
+          name={conversations.map((dialogs, index) => (
             <li className={styles.link} key={index}>
               <img
                 className={styles.image}
@@ -63,7 +64,7 @@ const Dialogs = () => {
           ))}
         />
         <MessageItem
-          text={store.CONVERSATION_MESSAGES.map((message, index) => (
+          text={conversationMessages.map((message, index) => (
             <li className={styles.texts} key={index}>
               {message.text}
             </li>
