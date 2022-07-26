@@ -1,9 +1,5 @@
 import profileReducer from "./profile-reducer";
 import dialogsReducer from "./dialogs-reducer";
-import {
-  addPostActionCreator,
-  updateNewPostTextActionCreator,
-} from "./profile-reducer";
 
 let store = {
   _state: {

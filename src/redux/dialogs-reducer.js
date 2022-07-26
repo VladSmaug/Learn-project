@@ -5,7 +5,7 @@ const dialogsReducer = (state, action) => {
   {
     switch (action.type) {
       case SEND_MESSAGE:
-        let body = state.NEW_MESSAGE_TEXT;
+        const body = state.NEW_MESSAGE_TEXT;
         state.NEW_MESSAGE_TEXT = "";
         state.CONVERSATION_MESSAGES.push({ text: body, id: 7 });
 

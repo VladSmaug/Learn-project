@@ -73,7 +73,7 @@ const Dialogs = () => {
         />
         <div className={styles.workspace}>
           <textarea
-            value={store._state.NEW_MESSAGE_TEXT}
+            value={store.NEW_MESSAGE_TEXT}
             onChange={onNewMessageChange}
             placeholder="Enter your message"
           />
