@@ -3,7 +3,7 @@ import classNames from "classnames";
 import { NavLink } from "react-router-dom";
 
 import styles from "./index.module.css";
-import store from "../../redux/state";
+import store from "../../redux/redux-store";
 import {
   sendMessageCreator,
   updateNewMessageBodyCreator,
@@ -46,12 +46,12 @@ const onNewMessageChange = (e) => {
 };
 
 //  const Dialogs = ({list}) - for table
-const Dialogs = () => {
+const Dialogs = ({ conversations, conversationMessages }) => {
   return (
     <div className={styles.dialogs}>
       <div className={styles.dialogsItems}>
         <DialogItem
-          name={store._state.DIALOGS.CONVERSATIONS.map((dialogs, index) => (
+          name={conversations.map((dialogs, index) => (
             <li className={styles.link} key={index}>
               <img
                 className={styles.image}
@@ -63,17 +63,15 @@ const Dialogs = () => {
           ))}
         />
         <MessageItem
-          text={store._state.DIALOGS.CONVERSATION_MESSAGES.map(
-            (message, index) => (
-              <li className={styles.texts} key={index}>
-                {message.text}
-              </li>
-            )
-          )}
+          text={conversationMessages.map((message, index) => (
+            <li className={styles.texts} key={index}>
+              {message.text}
+            </li>
+          ))}
         />
         <div className={styles.workspace}>
           <textarea
-            value={store._state.NEW_MESSAGE_TEXT}
+            value={store.NEW_MESSAGE_TEXT}
             onChange={onNewMessageChange}
             placeholder="Enter your message"
           />
