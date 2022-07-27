@@ -7,19 +7,19 @@ import {
 import MyPost from ".";
 
 const MyPostContainer = (props) => {
-  console.log({});
   const areaRef = createRef();
   const onPostHandler = () => {
     const text = areaRef.current.value;
-    props.store.dispatch(updateNewPostTextActionCreator());
+    props.dispatch(updateNewPostTextActionCreator(text));
   };
 
   const addPostHandler = () => {
-    props.store.dispatch(addPostActionCreator());
+    props.dispatch(addPostActionCreator());
     areaRef.current.value = "";
   };
   return (
     <MyPost
+      areaRef={areaRef}
       onPostHandler={onPostHandler}
       addPostHandler={addPostHandler}
       messageList={props.messageList}

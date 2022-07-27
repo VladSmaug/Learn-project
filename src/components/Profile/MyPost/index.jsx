@@ -5,10 +5,8 @@ import Post from "./Post";
 import styles from "./MyPost.module.css";
 
 const MyPost = (props) => {
-  const areaRef = createRef();
-
-  const PostElements = ({ messageList }) =>
-    messageList.map((post, index) => (
+  const PostElements = () =>
+    props.messageList.map((post, index) => (
       <Post key={index} message={post.message} likes={post.likes} />
     ));
 
@@ -17,8 +15,8 @@ const MyPost = (props) => {
       <h3>My posts</h3>
       <div>
         <textarea
+          ref={props.areaRef}
           onChange={props.onPostHandler}
-          ref={areaRef}
           placeholder="add your post here"
         />
       </div>

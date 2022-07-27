@@ -11,7 +11,11 @@ const Profile = (props) => {
     <div>
       <div className={styles.content}>
         <MyInfo />
-        <MyPostContainer store={props.store} messageList={props.messageList} />
+        <MyPostContainer
+          state={props.state}
+          messageList={props.messageList}
+          dispatch={props.dispatch}
+        />
       </div>
     </div>
   );
