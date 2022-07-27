@@ -12,7 +12,6 @@ import {
 
 const DialogItem = (props) => {
   const { name, id } = props;
-  console.log(name, "name");
   return (
     <div className={classNames(styles.dialog, styles.active)}>
       <NavLink to={"dialogs/" + id}>{name}</NavLink>
