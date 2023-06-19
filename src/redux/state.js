@@ -94,3 +94,4 @@ import dialogsReducer from "./dialogs-reducer";
 
 // export default store;
 // window.store = store;
+// for better understanding of what happening

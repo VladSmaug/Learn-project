@@ -18,6 +18,7 @@ const App = ({ state, dispatch }) => {
             path="profile"
             element={
               <Profile
+                state={state}
                 messageList={state.MESSAGES.POST_DATA}
                 dispatch={dispatch}
               />
